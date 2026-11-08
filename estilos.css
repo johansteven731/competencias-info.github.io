@@ -1,0 +1,1396 @@
+
+/* =====================================
+   1. CONFIGURACIÓN GENERAL
+===================================== */
+
+:root {
+    --azul: #142c46;
+    --azul-2: #203f5d;
+    --azul-3: #315878;
+    --dorado: #c5a36b;
+    --dorado-claro: #e7d6b5;
+    --verde: #477b70;
+    --verde-claro: #e6f0eb;
+    --fondo: #faf9f6;
+    --blanco: #ffffff;
+    --texto: #344253;
+    --gris: #718096;
+    --borde: #e7e9ed;
+    --sombra: 0 10px 35px rgba(20,44,70,0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--fondo);
+    color: var(--texto);
+    line-height: 1.8;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1250px;
+    margin: auto;
+}
+
+/* =====================================
+   2. ENCABEZADO Y MENÚ
+===================================== */
+
+.encabezado {
+    width: 100%;
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--borde);
+}
+
+.navegacion {
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--azul);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.marca strong {
+    color: var(--dorado);
+}
+
+.marca-icono {
+    width: 43px;
+    height: 43px;
+    border-radius: 8px;
+    background: var(--azul);
+    color: var(--dorado);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 17px;
+}
+
+.menu a {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--azul);
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: var(--dorado);
+}
+
+/* =====================================
+   3. PORTADA PRINCIPAL
+===================================== */
+
+.portada {
+    min-height: 650px;
+    background: linear-gradient(120deg, #10263d, #244967);
+    position: relative;
+    overflow: hidden;
+    padding: 100px 9%;
+    display: flex;
+    align-items: center;
+}
+
+.portada-contenido {
+    max-width: 750px;
+    position: relative;
+    z-index: 2;
+}
+
+.etiqueta,
+.numero-seccion,
+.pequeno-titulo {
+    color: var(--dorado);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.portada h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 5vw, 66px);
+    line-height: 1.2;
+    color: white;
+    margin: 25px 0;
+}
+
+.portada h1 span {
+    color: var(--dorado);
+}
+
+.portada-contenido > p {
+    max-width: 630px;
+    font-size: 16px;
+    color: #d4e0e9;
+}
+
+.portada-botones {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 35px;
+}
+
+.boton {
+    padding: 13px 24px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.boton-dorado {
+    background: var(--dorado);
+    color: var(--azul);
+}
+
+.boton-dorado:hover {
+    background: white;
+    transform: translateY(-3px);
+}
+
+.boton-transparente {
+    border: 1px solid #91a6b9;
+    color: white;
+}
+
+.boton-transparente:hover {
+    background: white;
+    color: var(--azul);
+}
+
+.portada-datos {
+    display: flex;
+    gap: 55px;
+    margin-top: 65px;
+    flex-wrap: wrap;
+}
+
+.portada-datos div {
+    display: flex;
+    flex-direction: column;
+}
+
+.portada-datos strong {
+    color: var(--dorado);
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+}
+
+.portada-datos span {
+    color: #c6d1db;
+    font-size: 11px;
+}
+
+.portada-decoracion {
+    position: absolute;
+    right: 9%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 340px;
+    height: 350px;
+}
+
+.circulo-grande {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border: 1px solid rgba(197,163,107,0.35);
+    border-radius: 50%;
+    right: 0;
+    top: 0;
+}
+
+.circulo-pequeno {
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 50%;
+    right: 30px;
+    top: 30px;
+}
+
+.tarjeta-portada {
+    position: absolute;
+    background: rgba(255,255,255,0.09);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 15px;
+    padding: 35px;
+    width: 270px;
+    right: 20px;
+    top: 65px;
+    color: white;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+.tarjeta-portada > span {
+    color: var(--dorado);
+    font-size: 50px;
+    font-family: 'Playfair Display', serif;
+}
+
+.tarjeta-portada h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+}
+
+.tarjeta-portada p {
+    color: #d3dee7;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.linea-decorativa {
+    width: 50px;
+    height: 3px;
+    background: var(--dorado);
+    margin: 20px 0;
+}
+
+.tarjeta-portada small {
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: var(--dorado-claro);
+}
+
+/* =====================================
+   4. SECCIONES GENERALES
+===================================== */
+
+.seccion {
+    padding: 100px 9%;
+}
+
+.fondo-azul {
+    background: #edf2f6;
+}
+
+.encabezado-seccion {
+    max-width: 820px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.encabezado-seccion h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 4vw, 44px);
+    color: var(--azul);
+    line-height: 1.3;
+    margin: 17px 0;
+}
+
+.encabezado-seccion > p {
+    font-size: 14px;
+    color: var(--gris);
+}
+
+.fondo-azul .encabezado-seccion .numero-seccion {
+    color: var(--verde);
+}
+
+/* =====================================
+   5. INTRODUCCIÓN
+===================================== */
+
+.introduccion-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 0.8fr;
+    gap: 60px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.introduccion-texto h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 27px;
+    color: var(--azul);
+    margin-bottom: 20px;
+}
+
+.introduccion-texto p {
+    font-size: 14px;
+    margin-bottom: 18px;
+    color: var(--texto);
+    text-align: justify;
+}
+
+.cita {
+    margin-top: 30px;
+    padding: 25px;
+    background: #f0ede6;
+    border-left: 4px solid var(--dorado);
+}
+
+.cita p {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    color: var(--azul);
+}
+
+.cita span {
+    font-size: 11px;
+    color: var(--gris);
+}
+
+.introduccion-lateral {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.dato-lateral {
+    padding: 20px;
+    background: white;
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    box-shadow: var(--sombra);
+}
+
+.dato-lateral span {
+    font-size: 25px;
+    font-family: 'Playfair Display', serif;
+    color: var(--dorado);
+}
+
+.dato-lateral h3 {
+    color: var(--azul);
+    font-size: 16px;
+}
+
+.dato-lateral p {
+    font-size: 12px;
+    color: var(--gris);
+}
+
+/* =====================================
+   6. OBJETIVOS
+===================================== */
+
+.franja-objetivos {
+    background: var(--azul);
+    padding: 80px 9%;
+}
+
+.encabezado-claro h2 {
+    color: white;
+}
+
+.objetivos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.objetivos-grid article {
+    padding: 25px 20px;
+    border-top: 1px solid rgba(255,255,255,0.3);
+}
+
+.objetivos-grid article > span {
+    color: var(--dorado);
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+}
+
+.objetivos-grid h3 {
+    color: white;
+    font-family: 'Playfair Display', serif;
+    margin: 12px 0;
+    font-size: 20px;
+}
+
+.objetivos-grid p {
+    color: #c9d5df;
+    font-size: 12px;
+}
+
+/* =====================================
+   7. CONCEPTOS
+===================================== */
+
+.conceptos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.concepto {
+    background: white;
+    padding: 30px;
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+    transition: 0.3s;
+}
+
+.concepto:hover {
+    transform: translateY(-5px);
+}
+
+.concepto-icono {
+    width: 43px;
+    height: 43px;
+    background: var(--azul);
+    color: var(--dorado);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    font-weight: 700;
+}
+
+.concepto h3 {
+    color: var(--azul);
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    margin: 20px 0 10px;
+}
+
+.concepto p {
+    color: var(--gris);
+    font-size: 13px;
+}
+
+.concepto-importante {
+    margin-top: 30px;
+    background: #f0ede6;
+    border-radius: 10px;
+    padding: 30px;
+    border-left: 4px solid var(--dorado);
+}
+
+.concepto-importante h3 {
+    color: var(--azul);
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 10px;
+}
+
+.concepto-importante p {
+    font-size: 13px;
+}
+
+/* =====================================
+   8. SECCIONES DE ENFOQUES
+===================================== */
+
+.enfoque-introduccion {
+    display: grid;
+    grid-template-columns: 1.5fr 0.7fr;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.enfoque-introduccion h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    color: var(--azul);
+    margin: 15px 0;
+}
+
+.enfoque-introduccion p {
+    color: var(--gris);
+    font-size: 14px;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.enfoque-destacado {
+    background: var(--azul);
+    color: white;
+    padding: 35px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: var(--sombra);
+}
+
+.enfoque-destacado > span {
+    color: var(--dorado);
+    font-family: 'Playfair Display', serif;
+    font-size: 85px;
+    line-height: 1.2;
+}
+
+.enfoque-destacado h3 {
+    color: white;
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.enfoque-destacado p {
+    text-align: center;
+    color: #d5e0e9;
+    font-size: 12px;
+}
+
+.enfoque-destacado.verde {
+    background: var(--verde);
+}
+
+.subtitulo-contenido {
+    margin: 50px 0 25px;
+}
+
+.subtitulo-contenido h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--azul);
+    font-size: 27px;
+}
+
+.subtitulo-contenido p {
+    color: var(--gris);
+    font-size: 13px;
+}
+
+/* =====================================
+   9. DISEÑOS DE INVESTIGACIÓN
+===================================== */
+
+.disenos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.diseno {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid var(--borde);
+    box-shadow: var(--sombra);
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+}
+
+.diseno:hover {
+    transform: translateY(-5px);
+}
+
+.diseno-numero {
+    color: var(--dorado);
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+}
+
+.etiqueta-diseño {
+    color: var(--verde);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.diseno h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    color: var(--azul);
+    margin: 12px 0;
+}
+
+.diseno > p {
+    font-size: 13px;
+    color: var(--gris);
+}
+
+.aplicacion {
+    background: #f1f4f6;
+    padding: 18px;
+    margin-top: 20px;
+    border-radius: 7px;
+    flex: 1;
+}
+
+.aplicacion strong {
+    color: var(--azul);
+    font-size: 12px;
+}
+
+.aplicacion p {
+    color: var(--gris);
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+.clasificacion-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.clasificacion-grid article {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    border-top: 4px solid var(--dorado);
+    box-shadow: var(--sombra);
+}
+
+.clasificacion-grid h3 {
+    color: var(--azul);
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 12px;
+}
+
+.clasificacion-grid p {
+    color: var(--gris);
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.clasificacion-grid strong {
+    font-size: 12px;
+    color: var(--verde);
+}
+
+.nota-metodologica {
+    margin-top: 35px;
+    padding: 25px;
+    border-left: 4px solid var(--dorado);
+    background: #f0ede6;
+    border-radius: 5px;
+    font-size: 13px;
+    color: var(--texto);
+}
+
+/* =====================================
+   10. COMPARACIÓN
+===================================== */
+
+.tabla-responsive {
+    overflow-x: auto;
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+    background: white;
+}
+
+.tabla-comparativa {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+.tabla-comparativa th {
+    background: var(--azul);
+    color: white;
+    padding: 20px;
+    font-size: 13px;
+    text-align: left;
+}
+
+.tabla-comparativa td {
+    padding: 18px;
+    font-size: 13px;
+    border-bottom: 1px solid var(--borde);
+}
+
+.tabla-comparativa td:first-child {
+    color: var(--azul);
+    font-weight: 700;
+}
+
+.tabla-comparativa tr:hover td {
+    background: #f7f8f9;
+}
+
+.semejanzas {
+    margin-top: 40px;
+    background: white;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+}
+
+.semejanzas h3 {
+    color: var(--azul);
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+.semejanzas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.semejanzas-grid div {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.semejanzas-grid span {
+    color: var(--verde);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.semejanzas-grid p {
+    font-size: 13px;
+}
+
+.reflexion {
+    background: var(--azul);
+    padding: 30px;
+    margin-top: 25px;
+    border-radius: 10px;
+}
+
+.reflexion h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--dorado);
+    margin-bottom: 10px;
+}
+
+.reflexion p {
+    color: white;
+    font-size: 13px;
+}
+
+/* =====================================
+   11. INSTRUMENTOS
+===================================== */
+
+.definiciones-doble {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-bottom: 55px;
+}
+
+.definiciones-doble > div {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+}
+
+.definiciones-doble span {
+    font-family: 'Playfair Display', serif;
+    font-size: 35px;
+    color: var(--dorado);
+}
+
+.definiciones-doble h3 {
+    color: var(--azul);
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+}
+
+.definiciones-doble p {
+    font-size: 13px;
+    color: var(--gris);
+}
+
+.instrumentos-tabla {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--sombra);
+}
+
+.instrumento-fila {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr 1.5fr;
+    gap: 15px;
+    padding: 20px;
+    border-bottom: 1px solid var(--borde);
+    align-items: center;
+    font-size: 12px;
+}
+
+.instrumento-fila strong {
+    color: var(--azul);
+}
+
+.instrumento-cabecera {
+    background: var(--azul);
+    color: white;
+    font-weight: 700;
+}
+
+.instrumento-fila:last-child {
+    border-bottom: none;
+}
+
+.caso-practico {
+    background: #f0ede6;
+    border-radius: 12px;
+    padding: 40px;
+    margin-top: 25px;
+}
+
+.caso-practico h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 27px;
+    color: var(--azul);
+    margin: 15px 0;
+}
+
+.caso-practico > p {
+    font-size: 13px;
+    color: var(--texto);
+}
+
+.caso-pasos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.caso-pasos div {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.caso-pasos strong {
+    color: var(--verde);
+    font-size: 13px;
+}
+
+.caso-pasos p {
+    color: var(--gris);
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+.caso-cierre {
+    border-top: 1px solid #d9d1c2;
+    padding-top: 20px;
+}
+
+.caso-practico .etiqueta-diseño {
+    display: inline-block;
+}
+
+/* =====================================
+   12. ARTÍCULOS ACADÉMICOS
+===================================== */
+
+.articulos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.articulo {
+    background: white;
+    padding: 28px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--sombra);
+    transition: 0.3s;
+}
+
+.articulo:hover {
+    transform: translateY(-5px);
+}
+
+.articulo-superior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.etiqueta-articulo {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 7px 10px;
+    border-radius: 20px;
+}
+
+.cuantitativo {
+    background: #e6edf5;
+    color: var(--azul);
+}
+
+.cualitativo {
+    background: var(--verde-claro);
+    color: var(--verde);
+}
+
+.anio {
+    color: var(--gris);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.articulo h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--azul);
+    line-height: 1.4;
+    margin: 22px 0 12px;
+}
+
+.autores {
+    color: var(--gris);
+    font-size: 11px;
+}
+
+.datos-articulo {
+    background: #f3f5f7;
+    padding: 15px;
+    border-radius: 6px;
+    margin: 18px 0;
+}
+
+.datos-articulo p {
+    font-size: 11px;
+    margin-bottom: 6px;
+}
+
+.articulo > p {
+    font-size: 12px;
+    color: var(--gris);
+}
+
+.analisis-articulo {
+    background: #f0ede6;
+    padding: 15px;
+    margin: 20px 0;
+    border-left: 3px solid var(--dorado);
+}
+
+.analisis-articulo strong {
+    color: var(--azul);
+    font-size: 11px;
+}
+
+.analisis-articulo p {
+    color: var(--gris);
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+.articulo > a {
+    color: var(--azul-3);
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+.articulo > a:hover {
+    color: var(--dorado);
+}
+
+.advertencia {
+    margin-top: 30px;
+    padding: 20px;
+    background: #f0ede6;
+    border-radius: 7px;
+    font-size: 12px;
+}
+
+/* =====================================
+   13. RECURSOS ACADÉMICOS
+===================================== */
+
+.recursos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.recurso {
+    background: white;
+    padding: 27px;
+    border: 1px solid var(--borde);
+    border-radius: 9px;
+    box-shadow: var(--sombra);
+}
+
+.recurso-icono {
+    font-size: 32px;
+}
+
+.recurso h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    color: var(--azul);
+    margin: 15px 0 10px;
+}
+
+.recurso p {
+    color: var(--gris);
+    font-size: 12px;
+    min-height: 80px;
+}
+
+.recurso a {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--verde);
+}
+
+/* =====================================
+   14. VIDEOS
+===================================== */
+
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.video {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+}
+
+.video-imagen {
+    height: 180px;
+    background: linear-gradient(135deg, #142c46, #456783);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+.video-imagen span {
+    width: 55px;
+    height: 55px;
+    background: var(--dorado);
+    color: var(--azul);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+}
+
+.verde-video {
+    background: linear-gradient(135deg, #315d55, #79a194);
+}
+
+.video h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--azul);
+    margin: 18px 0;
+}
+
+.video p {
+    color: var(--gris);
+    font-size: 13px;
+    margin: 15px 0;
+}
+
+.video a {
+    color: var(--verde);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* =====================================
+   15. CONCLUSIONES
+===================================== */
+
+.conclusiones {
+    background: white;
+}
+
+.conclusiones-contenido {
+    max-width: 900px;
+    margin: auto;
+}
+
+.conclusiones-contenido > p {
+    font-size: 14px;
+    color: var(--texto);
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.frase-final {
+    margin-top: 35px;
+    padding: 35px;
+    background: var(--azul);
+    border-left: 5px solid var(--dorado);
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    text-align: center;
+}
+
+/* =====================================
+   16. BIBLIOGRAFÍA
+===================================== */
+
+.bibliografia-lista {
+    max-width: 1000px;
+    margin: auto;
+    background: white;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+}
+
+.bibliografia-lista article {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--borde);
+}
+
+.bibliografia-lista article:last-child {
+    border-bottom: none;
+}
+
+.bibliografia-lista article > span {
+    color: var(--dorado);
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+}
+
+.bibliografia-lista p {
+    font-size: 12px;
+    color: var(--texto);
+}
+
+.bibliografia-lista a {
+    color: var(--verde);
+    font-weight: 700;
+}
+
+/* =====================================
+   17. PIE DE PÁGINA
+===================================== */
+
+.creditos {
+    background: #0d2034;
+    padding: 50px 8%;
+    text-align: center;
+    color: white;
+}
+
+.creditos-contenido {
+    max-width: 700px;
+    margin: auto;
+}
+
+.marca-footer {
+    color: white;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.creditos p {
+    color: #c4d0da;
+    font-size: 13px;
+}
+
+.creditos-linea {
+    height: 1px;
+    background: rgba(255,255,255,0.15);
+    margin: 25px 0;
+}
+
+.creditos-contenido > span {
+    color: #8fa1b3;
+    font-size: 11px;
+}
+
+/* =====================================
+   18. RESPONSIVE - TABLET
+===================================== */
+
+@media (max-width: 1100px) {
+
+    .portada-decoracion {
+        opacity: 0.35;
+        right: 2%;
+    }
+
+    .portada-contenido {
+        max-width: 700px;
+    }
+
+    .navegacion {
+        flex-direction: column;
+        padding: 15px 0;
+    }
+
+    .menu {
+        justify-content: center;
+    }
+
+    .recursos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* =====================================
+   19. RESPONSIVE - CELULAR
+===================================== */
+
+@media (max-width: 700px) {
+
+    .seccion {
+        padding: 65px 6%;
+    }
+
+    .portada {
+        padding: 75px 7%;
+        min-height: 620px;
+    }
+
+    .portada-decoracion {
+        display: none;
+    }
+
+    .portada h1 {
+        font-size: 39px;
+    }
+
+    .portada-datos {
+        gap: 25px;
+    }
+
+    .portada-datos strong {
+        font-size: 24px;
+    }
+
+    .introduccion-grid,
+    .enfoque-introduccion,
+    .objetivos-grid,
+    .conceptos-grid,
+    .disenos-grid,
+    .clasificacion-grid,
+    .articulos-grid,
+    .videos-grid,
+    .definiciones-doble,
+    .recursos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .instrumento-fila {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .instrumento-cabecera {
+        display: none;
+    }
+
+    .instrumento-fila {
+        padding: 18px;
+    }
+
+    .caso-pasos {
+        grid-template-columns: 1fr;
+    }
+
+    .semejanzas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .encabezado-seccion h2 {
+        font-size: 31px;
+    }
+
+    .menu {
+        gap: 10px;
+    }
+
+    .menu a {
+        font-size: 10px;
+    }
+
+    .navegacion {
+        padding: 12px 0;
+    }
+
+    .franja-objetivos {
+        padding: 65px 6%;
+    }
+
+    .frase-final {
+        font-size: 19px;
+    }
+
+}
+
+/* =====================================
+   20. IMPRESIÓN
+===================================== */
+
+@media print {
+
+    .encabezado {
+        position: static;
+    }
+
+    .menu,
+    .portada-botones {
+        display: none;
+    }
+
+    .seccion {
+        padding: 35px 20px;
+    }
+
+    .tarjeta,
+    .articulo,
+    .concepto {
+        break-inside: avoid;
+    }
+
+}
